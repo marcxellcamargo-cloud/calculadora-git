@@ -71,11 +71,6 @@ document.addEventListener('keydown', function (event) {
         calcular();
     } else if (tecla === 'Escape') {
         limpar();
-        function apagar() {
-            numeroAtual = numeroAtual.slice(0, -1);
-            atualizarDisplay();
-        }
-
     } else if (tecla === '%') {
         porcentagem();
     }
