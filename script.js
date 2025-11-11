@@ -57,3 +57,22 @@ function calcular() {
 function atualizarDisplay(valor) {
     document.getElementById('resultado').innerText = valor || numeroAtual || '0';
 }
+// Ativar uso do teclado físico
+document.addEventListener('keydown', function (event) {
+    const tecla = event.key;
+
+    if (!isNaN(tecla)) {
+        digitar(tecla);
+    } else if (tecla === '.') {
+        digitar('.');
+    } else if (['+', '-', '*', '/'].includes(tecla)) {
+        operar(tecla);
+    } else if (tecla === 'Enter' || tecla === '=') {
+        calcular();
+    } else if (tecla === 'Escape') {
+        limpar();
+    } else if (tecla === '%') {
+        porcentagem();
+    }
+});
+
